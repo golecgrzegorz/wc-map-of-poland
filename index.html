@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map of Poland simple data visualisation</title>
+    <link type="text/css" rel="stylesheet"  href="styles.css" media="all"/>
+    <script src="element-map-of-poland.js"></script>
+</head>
+<body>
+<button class="map-trigger"> TRIGGER CHANGE </button>
+<div class="maps-container">
+    <map-of-poland id="agro">
+        <ul>
+            <li data-v="podkarpackie">
+                <span style="font-size: 2.25rem;">🥖</span> <br/> <strong style="font-size: 1.75rem; background-color: #cf2e2e; padding: 4px; color: #fff;">55.72%</strong>
+            </li>
+            <li data-v="pomorskie">
+                <span style="font-size: 2.25rem;">🥐</span> <br/> <strong style="font-size: 1.25rem; background-color: #cf2e2e; padding: 4px; color: #fff;">25.5%</strong>
+            </li>
+            <li data-v="podlaskie">
+                <span style="font-size: 2.25rem;">🍓</span> <br/> <strong style="font-size: 1.25rem; padding: 4px; color: #fff;">25.5%</strong>
+            </li>
+        </ul>
+    </map-of-poland>
+
+    <map-of-poland id="accidents" data-palette="#a59f0b">
+        <ul>
+            <li data-v="podkarpackie">
+                <span>2,4%</span>
+            </li>
+            <li data-v="malopolskie">
+                <span>1,7%</span>
+            </li>
+            <li data-v="gornoslaskie">
+                <span>2,7%</span>
+            </li>
+            <li data-v="opolskie">
+                <span style="font-size: 2rem">9,1%</span>
+            </li>
+            <li data-v="dolnoslaskie">
+                <span style="font-size: 1.5rem;">4,3%</span>
+            </li>
+            <li data-v="swietokrzyskie">
+                <span>2,4%</span>
+            </li>
+            <li data-v="lubelskie">
+                <span>1,7%</span>
+            </li>
+            <li data-v="lodzkie">
+                <span>2,7%</span>
+            </li>
+            <li data-v="mazowieckie">
+                <span style="font-size: 2rem">9,1%</span>
+            </li>
+            <li data-v="wielkopolskie">
+                <span style="font-size: 1.5rem;">4,3%</span>
+            </li>
+            <li data-v="lubuskie">
+                <span style="font-size: 1.5rem;">4,3%</span>
+            </li>
+            <li data-v="kujawsko-pomorskie">
+                <span>2,4%</span>
+            </li>
+            <li data-v="zachodnio-pomorskie">
+                <span>1,7%</span>
+            </li>
+            <li data-v="podlaskie">
+                <span>1,7%</span>
+            </li>
+            <li data-v="warminsko-mazurskie">
+                <span>2,7%</span>
+            </li>
+            <li data-v="pomorskie">
+                <span style="font-size: 2rem">9,1%</span>
+            </li>
+        </ul>
+    </map-of-poland>
+</div>
+<h2 class="state-name"></h2>
+<script>
+
+  function onVClicked(event) {
+    document.querySelector('.state-name').textContent = event.detail.name;
+  }
+
+  function onDOMContentLoaded() {
+    document.getElementById('map-of-poland#agro')?.addEventListener('voivodeship-clicked', onVClicked);
+    document.getElementById('accidents')?.addEventListener('voivodeship-clicked', onVClicked);
+
+    const data = {
+      mazowieckie: '19,12%',
+      lodzkie: '4,3%',
+      wielkopolskie: '11,57%'
+    }
+
+    const agroLavMap = document.createElement('map-of-poland');
+    agroLavMap.id = 'agro-lavender';
+    agroLavMap.dataset.palette = '#BEADFA';
+
+    agroLavMap.addEventListener('voivodeship-clicked', onVClicked);
+
+    const list = document.createElement('ul');
+    for (const key in data) {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<span style="font-size: 2.25rem; color: #FFFFFF; font-weight: 700; border-bottom: 1px solid #DC84F3;">${data[key]}</span>`;
+      listItem.dataset.v = key;
+
+      list.append(listItem);
+    }
+
+    agroLavMap.append(list);
+    document.querySelector('.maps-container').append(agroLavMap);
+
+    document.querySelector('.map-trigger').addEventListener('click', () => {
+      agroLavMap.dataset.palette = '#DC84F3';
+    });
+  }
+
+  // ...
+
+  document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+
+</script>
+</body>
+</html>

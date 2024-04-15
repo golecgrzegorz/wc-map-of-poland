@@ -1,0 +1,79 @@
+.maps-container {
+    display: flex;
+    flex-flow: row-reverse;
+    gap: 4rem;
+}
+
+map-of-poland:not(:defined) {
+    display: none;
+}
+
+map-of-poland {
+    width: 100%;
+    user-select: none;
+    font-family: inherit;
+    text-align: center;
+}
+
+/* agro  map */
+
+map-of-poland#agro::part(pomorskie) {
+    fill:#9944aa; fill-opacity:.5;
+}
+
+map-of-poland#agro::part(podkarpackie) {
+    fill-opacity:.4;
+}
+
+map-of-poland#agro::part(podlaskie) {
+    fill:#94ad11; fill-opacity:.5; stroke: #3064a4; stroke-dasharray: 4px; stroke-dashoffset: 100; stroke-width: 2;
+}
+
+/* agro lavender map */
+
+map-of-poland#agro-lavender::part(pomorskie),
+map-of-poland#agro-lavender::part(podkarpackie){
+    fill-opacity:.5;
+}
+
+map-of-poland#agro-lavender::part(opolskie),
+map-of-poland#agro-lavender::part(lubelskie){
+    fill-opacity:.75;
+}
+
+/* accidents map */
+
+map-of-poland#accidents::part(pomorskie) {
+    fill:#dacc1d; fill-opacity: 1;
+}
+
+map-of-poland#accidents::part(mazowieckie) {
+    stroke: #cf2e2e;
+    stroke-dasharray: 4;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dashoffset: 100;
+
+    animation: dash both 5s infinite linear;
+}
+
+map-of-poland#accidents::part(opolskie) {
+    fill-opacity: 0.75;
+}
+
+map-of-poland#accidents::part(wielkopolskie) {
+    fill-opacity: .85;
+}
+
+map-of-poland#accidents::part(pomorskie) {
+    stroke: darkolivegreen;
+    stroke-dasharray: 5;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-dashoffset: 100;
+}
+
+map-of-poland#accidents::part(pomorskie):hover {
+    cursor: pointer;
+    animation: dash 5s infinite linear;
+}
