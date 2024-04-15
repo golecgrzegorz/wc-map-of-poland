@@ -13,7 +13,7 @@ I can listen for clicks on every region, and react to that event.
 
 ## Overview
 
-![img_4.png](img_4.png)
+![img_4.png](assets/img_4.png)
 
 Check `index.html` for details.  
 
@@ -26,7 +26,7 @@ To render basic map of regions you can use
     <map-of-poland id="accidents" data-palette="#a59f0b"></map-of-poland>
 </div>
 ```
-![img_3.png](img_3.png)
+![img_3.png](assets/img_3.png)
 
 To make it more fancy I will use `::part` css selector and define different style for every region. Under the hood there
 is an SVG element so we have to use proper css attributes (check example below).
@@ -114,7 +114,7 @@ Html can be styled using standard CSS attributes. I will add an inline style for
 
 ```
 
-![img_2.png](img_2.png)
+![img_2.png](assets/img_2.png)
 
 #### Create element programmatically
 
