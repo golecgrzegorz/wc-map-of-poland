@@ -77,7 +77,9 @@ map-of-poland#accidents::part(pomorskie):hover {
 
 ```
 
-[XXX]
+https://github.com/golecgrzegorz/wc-map-of-poland/assets/52568578/41527111-32f5-4749-80ee-1f54fabd2f96
+
+
 
 I can also change the map background color.
 
@@ -85,7 +87,7 @@ I can also change the map background color.
       mapInstance.dataset.palette = '#DC84F3';
 ```
 
-[YYY]
+https://github.com/golecgrzegorz/wc-map-of-poland/assets/52568578/dc72905f-f535-4e4f-ad9d-1b6d6deee17e
 
 #### Rendering data
 
