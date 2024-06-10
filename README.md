@@ -1,4 +1,4 @@
-# Native web components an SVG map
+# Create custom html element (native web component) using SVG map of Poland
 
 This example demonstrate how to create web components using browser built in mechanism called
 [custom element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
